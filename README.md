@@ -38,3 +38,17 @@ def FromXYZtoGraph(input_file):
 ```
 
 2 - Function that compute the isomorphism between two molecular graph object
+
+
+```python
+mol_0 = FromXYZtoGraph(pathToMolecules/mol_0.xyz)
+mol_1 = FromXYZtoGraph(pathToMolecules/mol_1.xyz)
+
+prop = 'atom'
+nm = nx.algorithms.isomorphism.categorical_node_match(prop,prop)
+for index, rows in df_calc_ions.iterrows():
+    if nx.is_isomorphic(FromXYZtoGraph(mol0),FromXYZtoGraph(mol_1),node_match=nm):
+        print('Are isomorphic!')
+    else:
+        print('Are NOT isomorphic!')
+```

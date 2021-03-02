@@ -1,6 +1,4 @@
 import networkx as nx
-import os
-import pandas as pd
 from ase import io, neighborlist, atoms
 
 def FromXYZtoGraph(input_file):

@@ -8,6 +8,11 @@ This program used a python3 interface, to run this code you must install on your
 * ```networkx```
 * ```ase```
 
+```python
+import networkx as nx
+from ase import io, neighborlist, atoms
+```
+
 ## Structure
 
 1 - Function that encode the molecule from the Euclidean space (.xyz) to the corrisponding graph structure.

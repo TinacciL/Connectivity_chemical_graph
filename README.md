@@ -1,5 +1,5 @@
 # Connectivity_chemical_graph
-Python script that permits to encode molecules as molecular graph and compare the connectivity of two molecules
+Python 3.8 script that permits to encode molecules as molecular graph and compare the connectivity of two molecules
 
 ## Installation
 

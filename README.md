@@ -45,7 +45,7 @@ def FromXYZtoGraph(input_file):
 ```
 2 - Code main: computing the isomorphism between two molecular graph object.
 
-    2.1 - Encode the molecoles from .xyz to graph molecule objects, modify the path (example "pathToMolecules/mol_0.xyz") where your .xyz is locate.
+   2.1 - Encode the molecoles from .xyz to graph molecule objects, modify the path (example "pathToMolecules/mol_0.xyz") where your .xyz is locate.
 ```python
 mol_0 = FromXYZtoGraph(pathToMolecules/mol_0.xyz)
 mol_1 = FromXYZtoGraph(pathToMolecules/mol_1.xyz)

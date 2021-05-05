@@ -50,7 +50,9 @@ def FromXYZtoGraph(input_file):
 mol_0 = FromXYZtoGraph(pathToMolecules/mol_0.xyz)
 mol_1 = FromXYZtoGraph(pathToMolecules/mol_1.xyz)
 ```
-    2.2 - Run the function to control the isomorphism between the two molecules
+
+   2.2 - Run the function to control the isomorphism between the two molecules
+
 ```python
 prop = 'atom'
 nm = nx.algorithms.isomorphism.categorical_node_match(prop,prop)

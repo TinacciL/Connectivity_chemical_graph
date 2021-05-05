@@ -1,5 +1,5 @@
-# Connectivity_chemical_graph
-Python 3.8 script that permits to encode molecules as molecular graph and compare the connectivity of two molecules
+# Connectivity in chemical graph
+This is a Python 3.8 script that permits to encode molecules as molecular graph and compare the connectivity of two molecules.
 
 ## Installation
 
@@ -8,14 +8,16 @@ This program used a python3 interface, to run this code you must install on your
 * ```networkx```
 * ```ase```
 
+## Script Structure
+
+0 - Import the required packages
+
 ```python
 import networkx as nx
 from ase import io, neighborlist, atoms
 ```
 
-## Structure
-
-1 - Function that encode the molecule from the Euclidean space (.xyz) to the corrisponding graph structure.
+1 - Function that encode the molecule from the Euclidean space (.xyz) to the corrisponding graph structure, and you will call it in the main of the code.
 
 ```python
 def FromXYZtoGraph(input_file):
@@ -41,21 +43,21 @@ def FromXYZtoGraph(input_file):
         G.nodes[i].update(tmp_attr.copy())
     return(G)
 ```
-
-2 - Function that compute the isomorphism between two molecular graph object
-
-
+2 - Main of the code: computing the isomorphism between two molecular graph object.
+    2.1 - Encode the molecoles from .xyz to graph molecule objects, modify the path (example "pathToMolecules/mol_0.xyz") where your .xyz is locate.
 ```python
 mol_0 = FromXYZtoGraph(pathToMolecules/mol_0.xyz)
 mol_1 = FromXYZtoGraph(pathToMolecules/mol_1.xyz)
-
+```
+    2.2 - Run the function to control the isomorphism between the two molecules
+```python
 prop = 'atom'
 nm = nx.algorithms.isomorphism.categorical_node_match(prop,prop)
-for index, rows in df_calc_ions.iterrows():
-    if nx.is_isomorphic(FromXYZtoGraph(mol0),FromXYZtoGraph(mol_1),node_match=nm):
-        print('Are isomorphic!')
-    else:
-        print('Are NOT isomorphic!')
+
+if nx.is_isomorphic(FromXYZtoGraph(mol0),FromXYZtoGraph(mol_1),node_match=nm):
+    print('Are isomorphic!')
+else:
+    print('Are NOT isomorphic!')
 ```
 
 ## Associated publication

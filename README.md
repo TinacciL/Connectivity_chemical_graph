@@ -43,7 +43,8 @@ def FromXYZtoGraph(input_file):
         G.nodes[i].update(tmp_attr.copy())
     return(G)
 ```
-2 - Main of the code: computing the isomorphism between two molecular graph object.
+2 - Code main: computing the isomorphism between two molecular graph object.
+
     2.1 - Encode the molecoles from .xyz to graph molecule objects, modify the path (example "pathToMolecules/mol_0.xyz") where your .xyz is locate.
 ```python
 mol_0 = FromXYZtoGraph(pathToMolecules/mol_0.xyz)
@@ -54,7 +55,7 @@ mol_1 = FromXYZtoGraph(pathToMolecules/mol_1.xyz)
 prop = 'atom'
 nm = nx.algorithms.isomorphism.categorical_node_match(prop,prop)
 
-if nx.is_isomorphic(FromXYZtoGraph(mol0),FromXYZtoGraph(mol_1),node_match=nm):
+if nx.is_isomorphic(mol0,mol_1,node_match=nm):
     print('Are isomorphic!')
 else:
     print('Are NOT isomorphic!')
